@@ -1,7 +1,24 @@
+import { HEROES, COMICS } from './custom/data';
+import { shuffle, GAME_STATE } from './custom/utils';
+
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App () {
+  
+  const initialState = {
+    // we initialize the state by populating the bench with a shuffled collection of heroes
+    bench: shuffle(HEROES),
+    [COMICS.DC]: [],
+    [COMICS.MARVEL]: [],
+    gameState: GAME_STATE.READY,
+    timeLeft: 0,
+  };
+
+  const GAME_DURATION = 1000 * 30; // 30 seconds
+
+  // const
+
   return (
     <div className="App">
       <header className="App-header">
